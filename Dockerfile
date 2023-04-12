@@ -1,6 +1,6 @@
 
-FROM python:3.9-slim-buster
-WORKDIR /app
-COPY script.py /app
+FROM php:7.4-apache
+COPY . /var/www/html/
 EXPOSE 80
-CMD ["python", "script.py"]
+CMD ["apache2ctl", "-D", "FOREGROUND"]
+
